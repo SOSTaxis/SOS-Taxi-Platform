@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 
 // Utility for OTP generation
 function generateOTP(length: number = 6): string {
@@ -15,7 +14,7 @@ function validateIndianPhoneNumber(phone: string): boolean {
   return indianPhoneRegex.test(phone);
 }
 
-function MobileRegistration() {
+function App() {
   const [stage, setStage] = useState<'phone' | 'otp'>('phone');
   const [formData, setFormData] = useState({
     phone: '',
@@ -50,7 +49,6 @@ function MobileRegistration() {
     }
 
     try {
-      // Placeholder for user registration logic
       console.log('User registered:', formData);
       alert('Registration Successful! 🚕');
     } catch (error) {
@@ -188,14 +186,6 @@ function MobileRegistration() {
       }}>
         By registering, you agree to our terms of service
       </p>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div className="App">
-      <MobileRegistration />
     </div>
   );
 }
